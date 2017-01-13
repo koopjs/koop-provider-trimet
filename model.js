@@ -6,7 +6,14 @@ const translate = require('./translate')
 const cache = {}
 const interval = setInterval(() => { delete cache.data }, 5000)
 
-const model = function (koop) {
+process.on('SIGINT', () => {
+  clearInterval(interval)
+})
+process.on('SIGTERM', () => {
+  clearInterval(interval)
+})
+
+module.exports = function (koop) {
   return {
     get (callback) {
       if (cache.data) return callback(null, cache.data)
@@ -16,14 +23,6 @@ const model = function (koop) {
         callback(null, featureCollection)
         cache.data = featureCollection
       })
-    },
-    kill () {
-      clearInterval(interval)
     }
   }
 }
-
-process.on('SIGINT', model.kill)
-process.on('SIGTERM', model.kill)
-
-model.exports = model
