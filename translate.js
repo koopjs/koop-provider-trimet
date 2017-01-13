@@ -7,10 +7,11 @@ module.exports = function translate (input) {
 
 function translateVehicle (vehicle) {
   const feature = {
+    type: 'Feature',
     properties: vehicle,
     geometry: {
       type: 'Point',
-      coordinates: `${vehicle.longitude}, ${vehicle.latitude}`
+      coordinates: [vehicle.longitude, vehicle.latitude]
     }
   }
   const dateFields = ['expires', 'serviceDate', 'time']

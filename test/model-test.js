@@ -11,7 +11,6 @@ test('should properly fetch from the trimet api and return geojson', t => {
     t.error(err)
     t.equal(geojson.type, 'FeatureCollection', 'create a proper feature collection')
     t.ok(geojson.features, 'geojson has features')
-    model.kill()
     t.end()
     process.exit(0)
   })

@@ -1,3 +1,4 @@
+const fs = require('fs')
 module.exports = function (trimet, createController) {
   const controller = createController()
   // respond to the root route
@@ -8,6 +9,7 @@ module.exports = function (trimet, createController) {
   // use the shared code in the BaseController to create a feature service
   controller.featureServer = function (req, res) {
     trimet.get((err, geojson) => {
+      fs.writeFileSync('./test.geojson', JSON.stringify(geojson))
       if (err) return res.status(500).json({error: err.message})
       controller.processFeatureServer(req, res, geojson)
     })
