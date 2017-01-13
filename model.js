@@ -1,11 +1,14 @@
 'use strict'
-const request = require('request').defaults({gzip: true})
+process.on('SIGINT', model.kill)
+process.on('SIGTERM', model.kill)
+
+const request = require('request').defaults({gzip: true, json: true})
 const translate = require('./translate')
 // Set up a POJO cache that gets cleared every 5 seconds
 const cache = {}
-setInterval(() => { delete cache.data }, 5000)
+const interval = setInterval(() => { delete cache.data }, 5000)
 
-module.exports = function (koop) {
+const model = function (koop) {
   return {
     get (callback) {
       if (cache.data) return callback(null, cache.data)
@@ -15,6 +18,11 @@ module.exports = function (koop) {
         callback(null, featureCollection)
         cache.data = featureCollection
       })
+    },
+    kill () {
+      clearInterval(interval)
     }
   }
 }
+
+model.exports = model
