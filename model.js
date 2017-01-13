@@ -7,10 +7,13 @@ const cache = {}
 const interval = setInterval(() => { delete cache.data }, 5000)
 
 process.on('SIGINT', () => {
+  console.log('wtf')
   clearInterval(interval)
+  process.exit(0)
 })
 process.on('SIGTERM', () => {
   clearInterval(interval)
+  process.exit(0)
 })
 
 module.exports = function (koop) {
