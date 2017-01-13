@@ -1,6 +1,4 @@
 'use strict'
-process.on('SIGINT', model.kill)
-process.on('SIGTERM', model.kill)
 
 const request = require('request').defaults({gzip: true, json: true})
 const translate = require('./translate')
@@ -24,5 +22,8 @@ const model = function (koop) {
     }
   }
 }
+
+process.on('SIGINT', model.kill)
+process.on('SIGTERM', model.kill)
 
 model.exports = model

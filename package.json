@@ -1,6 +1,6 @@
 {
   "name": "koop-trimet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Trimet provider for koop",
   "main": "index.js",
   "directories": {
