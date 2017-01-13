@@ -1,0 +1,36 @@
+{
+  "name": "koop-trimet",
+  "version": "0.0.0",
+  "description": "A Trimet provider for koop",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "standard && tape test/**/*.js"
+  },
+  "dependencies": {
+    "request": "^2.79.0"
+  },
+  "author": "Daniel Fenton",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:koopjs/koop-yelp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/koopjs/koop-trimet/issues"
+  },
+  "homepage": "https://github.com/koopjs/koop-trimet",
+  "keywords": [
+    "koop",
+    "trimet",
+    "poi",
+    "bus locations"
+  ]
+}
