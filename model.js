@@ -7,7 +7,6 @@ const cache = {}
 const interval = setInterval(() => { delete cache.data }, 5000)
 
 process.on('SIGINT', () => {
-  console.log('wtf')
   clearInterval(interval)
   process.exit(0)
 })
