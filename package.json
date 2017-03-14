@@ -1,5 +1,5 @@
 {
-  "name": "koop-trimet",
+  "name": "koop-provider-trimet",
   "version": "2.0.0",
   "description": "A Trimet provider for koop",
   "main": "index.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/%3Akoopjs/koop-yelp.git"
+    "url": "git+https://github.com/koopjs/koop-provider-trimet.git"
   },
   "bugs": {
-    "url": "https://github.com/koopjs/koop-trimet/issues"
+    "url": "https://github.com/koopjs/koop-provider-trimet/issues"
   },
-  "homepage": "https://github.com/koopjs/koop-trimet",
+  "homepage": "https://github.com/koopjs/koop-provider-trimet",
   "keywords": [
     "koop",
     "trimet",
