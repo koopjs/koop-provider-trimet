@@ -9,13 +9,14 @@ const request = require('request').defaults({gzip: true, json: true})
 const config = require('config')
 const translate = require('./translate')
 
-function Model (koop) {}
+function Model (options = {}) {
+  this.key = options.key ? options.key : config.trimet.key
+}
 
 // This is the only public function you need to implement
 Model.prototype.getData = function (req, callback) {
   // Call the remote API with our developer key
-  const key = config.trimet.key
-  request(`https://developer.trimet.org/ws/v2/vehicles/onRouteOnly/false/appid/${key}`, (err, res, body) => {
+  request(`https://developer.trimet.org/ws/v2/vehicles/onRouteOnly/false/appid/${this.key}`, (err, res, body) => {
     if (err) return callback(err)
     // translate the response into geojson
     const geojson = translate(body)
