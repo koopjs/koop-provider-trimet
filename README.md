@@ -1,6 +1,8 @@
 # Koop-TriMet
 ## A provider for the TriMet Bus API
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/koopjs/koop-provider-trimet.svg)](https://greenkeeper.io/)
+
 This is a plugin to [Koop](http://koopjs.github.io) that requests data from the [TriMet bus API](https://developer.trimet.org) and returns data in an Esri-compatible [Geoservices](http://geoservices.github.io/) reponse.
 
 [View a live example](http://dcdev.maps.arcgis.com/home/item.html?id=2603e7e3f10742f78093edf8ea2adfd8#visualize)
